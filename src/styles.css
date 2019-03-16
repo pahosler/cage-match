@@ -1,0 +1,76 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #aaaaaa;
+  padding: 50px;
+  margin: auto;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 700px;
+  width: 600px;
+  border-radius: 15px;
+  align-items: center;
+  font-family: sans-serif;
+  text-align: center;
+  background: #cccccc;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 550px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flip-container {
+  margin-top: 15px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-container.flip .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container,
+.cardFront,
+.cardBack {
+  height: 150px;
+  width: 120px;
+}
+
+.flipper {
+  transition: 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.cardFront,
+.cardBack {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: rgb(100, 172, 255, 0.3);
+}
+
+.cardFront {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(0);
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  margin-left: -5px;
+}
